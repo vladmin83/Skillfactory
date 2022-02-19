@@ -6,8 +6,8 @@ sym_key = 'RUB'
 amount = 100
 
 
-r = requests.get(f"http://api.currencylayer.com/live?access_key=cf0b7a82426dee5db479c1bec14250f8")
+r = requests.get(f"https://free.currconv.com/api/v7/convert?q=USD_RUB,RUB_USD&compact=ultra&apiKey=2f98ff25fe53cb6c6e61")
 
 resp = json.loads(r.content)
-new_price = resp['quotes']['USDRUB'] * amount
+new_price = resp[sym_key] * amount
 print(new_price)
